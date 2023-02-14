@@ -6,11 +6,13 @@ function ColorForm(props) {
         // eliminate the default behavior of submit form
         e.preventDefault()
         props.addColor(input)
-    }
+
+        setInput("");
+    }  
   return (
     <div>
         <form onSubmit={handleSubmit}>
-            <input type="text" onChange={ (e) => setInput(e.target.value)} />
+            <input value={input} type="text" onChange={ (e) => setInput(e.target.value)} />
             <button type="submit">
                 Submit!
             </button>
